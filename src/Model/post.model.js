@@ -15,12 +15,12 @@ const PostSchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'users',
         required: true
     },
     comments: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: 'Comment'
+        ref: 'comments'
     },
     commentsCount: {
         type: Number,
@@ -32,4 +32,6 @@ const PostSchema = new mongoose.Schema({
     }
 });
 
-export const PostModel = mongoose.model('Post', PostSchema);
+const PostModel = mongoose.model('posts', PostSchema);
+
+module.exports = PostModel;
