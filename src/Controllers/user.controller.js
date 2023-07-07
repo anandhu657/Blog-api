@@ -26,7 +26,7 @@ module.exports = {
             } else {
                 const error = new Error("Email is required");
                 error.statusCode = 400
-                throw err;
+                throw error;
             }
         } catch (err) {
             next(err);
