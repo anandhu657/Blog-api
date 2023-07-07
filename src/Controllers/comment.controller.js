@@ -19,6 +19,7 @@ module.exports = {
                     blogPost.comments.push(commentId); //ADD THE ID OF THE COMMENT
                     blogPost.commentsCount++; //INCREMENT THE COMMENT COUNT
                     await blogPost.save();
+                    res.status(200).json({message:"Comment added successfully"});
                 }
             } else {
                 const error = new Error("Blog post not found");
